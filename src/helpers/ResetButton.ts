@@ -6,12 +6,7 @@ export class ResetButton {
   constructor(circles: Circle[]) {
     this.button = document.createElement("button");
     this.button.textContent = "Reset";
-    this.button.style.padding = "10px";
-    this.button.style.backgroundColor = "#3498db";
-    this.button.style.color = "#ffffff";
-    this.button.style.border = "none";
-    this.button.style.borderRadius = "5px";
-    this.button.style.cursor = "pointer";
+    this.button.classList.add("reset-button");
     this.button.addEventListener("click", () => {
       circles.length = 0;
       this.hide();
@@ -20,11 +15,11 @@ export class ResetButton {
   }
 
   public show() {
-    this.button.style.display = "block";
+    this.button.style.visibility = "visible";
   }
 
   public hide() {
-    this.button.style.display = "none";
+    this.button.style.visibility = "hidden";
   }
 
   public getElement(): HTMLButtonElement {

@@ -4,14 +4,16 @@ This project is a JavaScript-based canvas animation that demonstrates the creati
 
 ## Installation
 
-npm version-9.5.1
-node version -18.16.0
+npm version-9.5.1.
+
+node version -18.16.0.
 
 To run the Bouncing balls, follow these steps:
 
 1.  Clone the repository:
 
     1.git clone https://github.com/Agrob07/bouncing-ballz.git
+
     2.cd bouncing-ballz
 
 2.Install dependencies using npm: npm install

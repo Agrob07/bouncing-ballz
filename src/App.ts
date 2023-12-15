@@ -1,21 +1,24 @@
 import { Circle } from "./Circle";
 import { SpawnCircle } from "./SpawnCircle";
+import { ShowInstructions } from "./helpers/ShowInstructions";
 
 export default class App {
   canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
   circles: Circle[];
+  showInstructions: ShowInstructions;
 
   constructor() {
     this.canvas = document.getElementById("myCanvas") as HTMLCanvasElement;
     this.ctx = this.canvas.getContext("2d")!;
     this.circles = [];
+    this.showInstructions = new ShowInstructions(this.canvas, this.ctx);
 
     if (!this.ctx) {
       console.error("Failed to get canvas context");
       return;
     }
-
+    this.showInstructions.display();
     this.canvas.addEventListener("click", (event) => {
       const newCircle = SpawnCircle.spawn(this.canvas, this.circles, event);
       if (newCircle) {
